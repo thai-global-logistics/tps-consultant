@@ -2,778 +2,297 @@
 <html lang="th">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>สมาคมการค้าไทยโกลบอล โลจิสติกส์ | THAI GLOBAL LOGISTICS TRADE ASSOCIATION</title>
   <meta name="description" content="ศูนย์กลางเครือข่ายผู้ประกอบการโลจิสติกส์ ส่งเสริมความร่วมมือ พัฒนาความรู้ และขยายโอกาสทางธุรกิจวิชาชีพ" />
 
   <style>
     :root{
-      --bg:#f6f8f7;
-      --surface:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --line:#e5e7eb;
-
-      --brand:#1b7f5a;
-      --brand2:#13a06f;
-      --brand3:#0b3b2b;
-      --tint:rgba(27,127,90,.10);
-
-      --radius:18px;
-      --shadow: 0 16px 48px rgba(2, 12, 27, .08);
+      --bg:#f6f8f7; --surface:#fff; --text:#0f172a; --muted:#475569;
+      --line:#e5e7eb; --brand:#1b7f5a; --brand2:#13a06f;
+      --brand3:#0b3b2b; --tint:rgba(27,127,90,.10);
+      --radius:18px; --shadow:0 16px 48px rgba(2,12,27,.08);
     }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Thai", "TH Sarabun New", sans-serif;
+      margin:0; overflow-x:hidden;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Thai","TH Sarabun New",sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 600px at 15% 5%, rgba(19,160,111,.18), transparent 60%),
-        radial-gradient(900px 600px at 85% 10%, rgba(27,127,90,.12), transparent 55%),
-        var(--bg);
+        radial-gradient(900px 600px at 15% 5%,rgba(19,160,111,.18),transparent 60%),
+        radial-gradient(900px 600px at 85% 10%,rgba(27,127,90,.12),transparent 55%),var(--bg);
     }
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:1180px; margin:0 auto; padding:0 20px; }
+    img{max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
 
-    /* Top bar */
     .topbar{
-      background:rgba(255,255,255,.85);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
-      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50
     }
-    .topbar-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
-    }
-
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 280px;
-    }
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:280px;min-width:0}
     .brand-logo{
-      width:46px; height:46px;
-      border-radius:14px;
-      border:1px solid rgba(27,127,90,.20);
-      background:#fff;
-      box-shadow: 0 10px 26px rgba(2, 12, 27, .10);
-      overflow:hidden;
-      flex: 0 0 46px;
-      display:flex; align-items:center; justify-content:center;
+      width:46px;height:46px;border-radius:14px;border:1px solid rgba(27,127,90,.20);
+      background:#fff;box-shadow:0 10px 26px rgba(2,12,27,.10);overflow:hidden;
+      flex:0 0 46px;display:flex;align-items:center;justify-content:center
     }
-    .brand-logo img{
-      width:100%; height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    .brand strong{ display:block; font-size:14px; line-height:1.15; }
-    .brand span{ display:block; font-size:12px; color:var(--muted); margin-top:2px; }
+    .brand-logo img{width:100%;height:100%;object-fit:cover;display:block}
+    .brand-text{min-width:0}
+    .brand strong{display:block;font-size:14px;line-height:1.25}
+    .brand span{display:block;font-size:12px;color:var(--muted);margin-top:2px;line-height:1.3}
 
-    /* Nav */
-    .nav{
-      display:flex; align-items:center; gap:10px;
-      flex-wrap:wrap;
-    }
-    .nav a{
-      padding:10px 12px;
-      border-radius:12px;
-      color:var(--muted);
-      font-weight:700;
-    }
-    .nav a:hover{ background: var(--tint); color: var(--brand3); }
-
-    .actions{
-      display:flex; align-items:center; gap:10px;
-      min-width: 240px;
-      justify-content:flex-end;
-    }
-
+    .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .nav a{padding:10px 11px;border-radius:12px;color:var(--muted);font-weight:700}
+    .nav a:hover{background:var(--tint);color:var(--brand3)}
+    .actions{display:flex;align-items:center;gap:10px;justify-content:flex-end;flex-shrink:0}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:8px;
-      padding:11px 14px;
-      border-radius:14px;
-      border:1px solid rgba(27,127,90,.25);
-      background: rgba(255,255,255,.85);
-      font-weight:800;
-      color: var(--brand3);
-      cursor:pointer;
-      white-space:nowrap;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;
+      border-radius:14px;border:1px solid rgba(27,127,90,.25);background:rgba(255,255,255,.9);
+      font-weight:800;color:var(--brand3);cursor:pointer;white-space:nowrap
     }
-    .btn:hover{ background: var(--tint); }
-    .btn.primary{
-      border:none;
-      background: linear-gradient(135deg, var(--brand2), var(--brand));
-      color:#fff;
-      box-shadow: 0 18px 45px rgba(19,160,111,.22);
-    }
-    .btn.primary:hover{ filter: brightness(1.03); }
-
+    .btn.primary{border:none;background:linear-gradient(135deg,var(--brand2),var(--brand));color:#fff;
+      box-shadow:0 18px 45px rgba(19,160,111,.22)}
     .hamburger{
-      display:none;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.85);
-      font-weight:800;
-      color: var(--brand3);
-      cursor:pointer;
+      display:none;padding:10px 12px;border-radius:12px;border:1px solid var(--line);
+      background:#fff;font-weight:800;color:var(--brand3);cursor:pointer
     }
+    .mobile-nav{display:none;border-top:1px solid var(--line);padding:8px 0 14px}
+    .mobile-nav.open{display:block}
+    .mobile-nav a{display:block;padding:11px 12px;border-radius:12px;color:var(--muted);font-weight:800}
+    .mobile-nav a:hover{background:var(--tint);color:var(--brand3)}
 
-    /* Hero */
-    .hero{ padding:54px 0 22px; }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      align-items:stretch;
+    .hero{padding:54px 0 22px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch}
+    .badge,.tag{
+      display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;
+      background:rgba(27,127,90,.10);border:1px solid rgba(27,127,90,.18);
+      color:var(--brand3);font-weight:800;font-size:13px
     }
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      background: rgba(27,127,90,.10);
-      border:1px solid rgba(27,127,90,.18);
-      color: var(--brand3);
-      font-weight:800;
-      font-size:13px;
-    }
-    h1{
-      font-size:46px;
-      line-height:1.05;
-      margin:14px 0 10px;
-      letter-spacing:-.4px;
-    }
-    .lead{
-      color:var(--muted);
-      font-size:18px;
-      line-height:1.7;
-      margin:0;
-      max-width: 56ch;
-    }
-    .cta{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top:18px;
-    }
-
-    .card{
-      background: rgba(255,255,255,.92);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .card-pad{ padding:18px; }
-    .hero-side{ position:relative; overflow:hidden; }
-    .hero-side .card-pad{ padding:18px 18px 16px; }
+    h1{font-size:46px;line-height:1.1;margin:14px 0 10px;letter-spacing:-.4px}
+    .lead{color:var(--muted);font-size:18px;line-height:1.7;margin:0;max-width:56ch}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .card{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card-pad{padding:18px}
+    .hero-side{overflow:hidden}
     .hero-visual{
-      height:170px;
-      border-radius: 14px;
-      background:
-        linear-gradient(135deg, rgba(27,127,90,.85), rgba(19,160,111,.65)),
-        radial-gradient(500px 220px at 70% 30%, rgba(255,255,255,.25), transparent 60%);
-      display:flex; align-items:flex-end;
-      padding:14px;
-      color:#fff;
-      font-weight:900;
-      letter-spacing:.2px;
+      min-height:170px;border-radius:14px;
+      background:linear-gradient(135deg,rgba(27,127,90,.88),rgba(19,160,111,.67));
+      display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:900;overflow-wrap:anywhere
     }
-    .mini{ display:grid; gap:10px; margin-top:12px; }
-    .mini .row{
-      display:flex; gap:10px; align-items:flex-start;
-      padding:12px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.75);
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: linear-gradient(135deg, var(--brand2), var(--brand));
-      margin-top:6px;
-      flex:0 0 10px;
-    }
-    .row b{ display:block; }
-    .row small{ color:var(--muted); line-height:1.45; display:block; margin-top:2px; }
+    .mini{display:grid;gap:10px;margin-top:12px}
+    .mini .row{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:14px;border:1px solid var(--line);background:#fff}
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--brand2),var(--brand));margin-top:6px;flex:0 0 10px}
+    .row b{display:block}.row small{color:var(--muted);line-height:1.45;display:block;margin-top:2px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .stat{padding:14px;border-radius:16px;border:1px solid var(--line);background:#fff}
+    .stat b{font-size:18px;display:block}.stat span{color:var(--muted);font-size:13px}
 
-    .stats{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-      margin-top:16px;
-    }
-    .stat{
-      padding:14px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.75);
-    }
-    .stat b{ font-size:18px; display:block; }
-    .stat span{ color:var(--muted); font-size:13px; }
+    .section{padding:34px 0;scroll-margin-top:100px}
+    .section h2{margin:0 0 10px;font-size:28px}.sub{margin:0 0 16px;color:var(--muted);line-height:1.7;max-width:80ch}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .feature{padding:18px;border-radius:var(--radius);border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+    .feature h3{margin:10px 0 8px}.feature p{margin:0;color:var(--muted);line-height:1.7}
+    .cta-band{border-radius:24px;border:1px solid rgba(27,127,90,.18);background:linear-gradient(135deg,rgba(27,127,90,.10),rgba(255,255,255,.88));
+      padding:20px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .img-card,.gallery-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);cursor:pointer}
+    .img-card img{width:100%;height:auto;display:block}
+    .table-wrap{border-radius:18px;overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+    table{width:100%;border-collapse:collapse;min-width:760px}
+    th,td{border-bottom:1px solid var(--line);padding:12px;text-align:left;vertical-align:top;font-size:14px}
+    th{background:rgba(27,127,90,.10);color:var(--brand3);font-weight:900}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .gallery-card img{width:100%;height:360px;object-fit:cover;display:block}
+    .gallery-info{padding:14px 14px 16px}.gallery-info b{display:block}.gallery-info small{color:var(--muted)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:#fff;outline:none;font-size:16px}
+    textarea{min-height:120px;resize:vertical}
+    .small{font-size:12px;color:var(--muted);line-height:1.6}
+    footer{margin-top:22px;padding:22px 0 32px;border-top:1px solid var(--line);color:var(--muted)}
+    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+    .footer-links{display:flex;gap:8px;flex-wrap:wrap}.footer-links a{padding:8px 10px;border-radius:12px}
 
-    /* Sections */
-    .section{ padding:34px 0; }
-    .section h2{
-      margin:0 0 10px;
-      font-size:28px;
-      letter-spacing:-.2px;
-    }
-    .sub{
-      margin:0 0 16px;
-      color:var(--muted);
-      line-height:1.7;
-      max-width: 80ch;
-    }
+    .lightbox{position:fixed;inset:0;background:rgba(2,6,23,.72);display:none;align-items:center;justify-content:center;padding:22px;z-index:999}
+    .lightbox.open{display:flex}.lightbox-inner{max-width:1080px;width:100%;border-radius:18px;overflow:hidden;background:#0b1220;position:relative}
+    .lightbox-inner img{width:100%;height:auto;display:block}.lightbox-close{position:absolute;right:12px;top:12px;border:none;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.18);color:#fff;font-weight:900}
 
-    .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-    .grid2{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
-
-    .feature{
-      padding:18px;
-      border-radius: var(--radius);
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.92);
-      box-shadow: var(--shadow);
+    @media (max-width:1080px){
+      .nav{display:none}.hamburger{display:inline-flex}
+      .actions .btn.primary{display:none}
     }
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      background: rgba(27,127,90,.10);
-      border:1px solid rgba(27,127,90,.18);
-      color: var(--brand3);
-      font-weight:900;
-      font-size:12px;
+    @media (max-width:760px){
+      .wrap{padding:0 14px}
+      .topbar-inner{padding:10px 0;align-items:center}
+      .brand{gap:9px;flex:1}
+      .brand-logo{width:42px;height:42px;flex-basis:42px;border-radius:11px}
+      .brand strong{font-size:13px;line-height:1.25}
+      .brand span{font-size:10px;line-height:1.25;overflow-wrap:anywhere}
+      .actions{gap:6px}
+      .actions .btn{display:none}
+      .hamburger{display:inline-flex;padding:9px 11px}
+      .hero{padding:26px 0 12px}
+      .hero-grid,.grid3,.grid2,.gallery-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+      h1{font-size:32px;line-height:1.18}
+      .lead{font-size:16px;line-height:1.65}
+      .stats{grid-template-columns:1fr}
+      .section{padding:26px 0}
+      .section h2{font-size:25px}
+      .card-pad,.feature{padding:16px}
+      .cta{display:grid;grid-template-columns:1fr}
+      .cta .btn{width:100%}
+      .cta-band{align-items:stretch}
+      .cta-band>div:last-child{display:grid!important;width:100%}
+      .cta-band .btn{width:100%}
+      .gallery-card img{height:auto;max-height:none;object-fit:contain}
+      .table-wrap{margin-left:0;margin-right:0}
+      .footer-links{display:grid;grid-template-columns:1fr 1fr}
     }
-    .feature h3{ margin:10px 0 8px; }
-    .feature p{ margin:0; color:var(--muted); line-height:1.7; }
-
-    /* CTA band */
-    .cta-band{
-      border-radius: 24px;
-      border:1px solid rgba(27,127,90,.18);
-      background:
-        radial-gradient(900px 340px at 15% 30%, rgba(19,160,111,.22), transparent 60%),
-        linear-gradient(135deg, rgba(27,127,90,.10), rgba(255,255,255,.85));
-      padding:20px;
-      box-shadow: var(--shadow);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
+    @media (max-width:390px){
+      .brand span{display:none}
+      .brand strong{font-size:12px}
+      h1{font-size:29px}
     }
-
-    /* Image card + table */
-    .img-card{
-      border-radius: 18px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      box-shadow: var(--shadow);
-      background:#fff;
-      cursor:pointer;
-      transition: transform .18s ease;
-    }
-    .img-card:hover{ transform: translateY(-4px); }
-    .img-card img{ width:100%; height:auto; display:block; }
-
-    .table-wrap{
-      border-radius:18px;
-      overflow:auto;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.92);
-      box-shadow: var(--shadow);
-    }
-    table{
-      width:100%;
-      border-collapse:collapse;
-      min-width: 760px;
-    }
-    th, td{
-      border-bottom:1px solid var(--line);
-      padding:12px 12px;
-      text-align:left;
-      vertical-align:top;
-      font-size:14px;
-    }
-    th{
-      background: rgba(27,127,90,.10);
-      color: var(--brand3);
-      font-weight:900;
-      position:sticky;
-      top:0;
-      z-index:1;
-    }
-    tr:hover td{ background: rgba(27,127,90,.06); }
-
-    /* Gallery */
-    .gallery-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .gallery-card{
-      border-radius: 18px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#fff;
-      box-shadow: var(--shadow);
-      cursor:pointer;
-      transition: transform .18s ease;
-    }
-    .gallery-card:hover{ transform: translateY(-6px); }
-    .gallery-card img{
-      width:100%;
-      height: 360px;
-      object-fit: cover;
-      display:block;
-    }
-    .gallery-info{ padding:14px 14px 16px; }
-    .gallery-info b{ display:block; }
-    .gallery-info small{ color:var(--muted); display:block; margin-top:4px; line-height:1.5; }
-
-    /* Contact */
-    .contact-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    input, textarea{
-      width:100%;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.92);
-      outline:none;
-      font-size:14px;
-    }
-    textarea{ min-height:120px; resize:vertical; }
-    .small{ font-size:12px; color:var(--muted); line-height:1.6; }
-
-    /* Footer */
-    footer{
-      margin-top:22px;
-      padding:22px 0 32px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-    }
-    .footer-links{ display:flex; gap:10px; flex-wrap:wrap; }
-    .footer-links a{ padding:8px 10px; border-radius:12px; }
-    .footer-links a:hover{ background: var(--tint); color: var(--brand3); }
-
-    /* Lightbox */
-    .lightbox{
-      position:fixed; inset:0;
-      background: rgba(2, 6, 23, .72);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:22px;
-      z-index: 999;
-    }
-    .lightbox.open{ display:flex; }
-    .lightbox-inner{
-      max-width: 1080px;
-      width:100%;
-      border-radius: 18px;
-      overflow:hidden;
-      box-shadow: 0 30px 90px rgba(0,0,0,.35);
-      background:#0b1220;
-      position:relative;
-    }
-    .lightbox-inner img{
-      width:100%;
-      height:auto;
-      display:block;
-      background:#0b1220;
-    }
-    .lightbox-close{
-      position:absolute;
-      right:12px; top:12px;
-      border:none;
-      padding:10px 12px;
-      border-radius: 12px;
-      background: rgba(255,255,255,.12);
-      color:#fff;
-      font-weight:900;
-      cursor:pointer;
-      backdrop-filter: blur(6px);
-    }
-    .lightbox-close:hover{ background: rgba(255,255,255,.18); }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .stats{ grid-template-columns: 1fr; }
-      .grid3{ grid-template-columns: 1fr; }
-      .grid2{ grid-template-columns: 1fr; }
-      .gallery-grid{ grid-template-columns: 1fr; }
-      .contact-grid{ grid-template-columns: 1fr; }
-      .brand{ min-width:auto; }
-      .actions{ min-width:auto; }
-      .nav{ display:none; }
-      .hamburger{ display:inline-flex; }
-      h1{ font-size:38px; }
-    }
-
-    /* Mobile dropdown */
-    .mobile-nav{
-      display:none;
-      border-top:1px solid var(--line);
-      padding: 10px 0 14px;
-    }
-    .mobile-nav.open{ display:block; }
-    .mobile-nav a{
-      display:block;
-      padding:10px 12px;
-      border-radius:12px;
-      color:var(--muted);
-      font-weight:800;
-    }
-    .mobile-nav a:hover{ background: var(--tint); color: var(--brand3); }
   </style>
 </head>
-
 <body>
-  <!-- Topbar -->
-  <header class="topbar">
-    <div class="wrap">
-      <div class="topbar-inner">
-        <a class="brand" href="#top" aria-label="กลับด้านบน">
-          <div class="brand-logo">
-            <!-- ✅ ตรง ๆ ชัวร์ -->
-            <img src="assets/logo.png" alt="โลโก้บริษัท">
-          </div>
-          <div>
-            <strong>สมาคมการค้าไทยโกลบอล โลจิสติกส์</strong>
-            <span>THAI GLOBAL LOGISTICS TRADE ASSOCIATION</span>
-          </div>
-        </a>
-
-        <nav class="nav" aria-label="เมนูหลัก">
-          <a href="#about">รู้จักเรา</a>
-          <a href="#services">บทบาทสมาคม</a>
-          <a href="#training">กิจกรรมและอบรม</a>
-          <a href="#schedule">ตารางฝึกอบรม</a>
-          <a href="#brochure">โปรชัวร์</a>
-          <a href="#gallery">ภาพกิจกรรม</a>
-          <a href="#contact">ติดต่อเรา</a>
-        </nav>
-
-        <div class="actions">
-          <a class="btn" href="tel:021161048">โทร 02-116-1048</a>
-          <a class="btn primary" href="#contact">ขอรับคำปรึกษา</a>
-          <button class="hamburger" id="hamburger" type="button" aria-label="เปิดเมนูมือถือ">เมนู</button>
-        </div>
-      </div>
-
-      <nav class="mobile-nav" id="mobileNav" aria-label="เมนูมือถือ">
-        <a href="#about">รู้จักเรา</a>
-        <a href="#services">บทบาทสมาคม</a>
-        <a href="#training">กิจกรรมและอบรม</a>
-        <a href="#schedule">ตารางฝึกอบรม</a>
-        <a href="#brochure">โปรชัวร์</a>
-        <a href="#gallery">ภาพกิจกรรม</a>
-        <a href="#contact">ติดต่อเรา</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top" class="wrap">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="card card-pad">
-          <span class="badge">Networking • Knowledge • Standards</span>
-          <h1>ศูนย์กลางเครือข่ายโลจิสติกส์ไทย<br/>เชื่อมโยงธุรกิจ “เติบโตอย่างยั่งยืน”</h1>
-          <p class="lead">
-            สมาคมการค้าไทยโกลบอล โลจิสติกส์ เป็นศูนย์กลางความร่วมมือของผู้ประกอบการด้านโลจิสติกส์ การนำเข้า–ส่งออก และซัพพลายเชน
-            มุ่งส่งเสริมเครือข่ายธุรกิจ พัฒนาความรู้ ขยายโอกาสทางธุรกิจวิชาชีพ และสร้างโอกาสทางการค้าอย่างยั่งยืน
-          </p>
-
-          <div class="cta">
-            <a class="btn primary" href="#training">ดูกิจกรรมและหลักสูตร</a>
-            <a class="btn" href="#services">ดูบทบาทของสมาคม</a>
-            <a class="btn" href="#schedule">ดูตารางฝึกอบรม</a>
-          </div>
-
-          <div class="stats">
-            <div class="stat"><b>เครือข่ายคุณภาพ</b><span>สมาชิก • พันธมิตร • ผู้เชี่ยวชาญ</span></div>
-            <div class="stat"><b>พัฒนาองค์ความรู้</b><span>อบรม • สัมมนา • แลกเปลี่ยนประสบการณ์</span></div>
-            <div class="stat"><b>ขยายโอกาสทางธุรกิจ</b><span>เชื่อมโยงการค้าในประเทศและต่างประเทศ</span></div>
-          </div>
-        </div>
-
-        <aside class="card hero-side">
-          <div class="card-pad">
-            <div class="hero-visual">THAI GLOBAL LOGISTICS TRADE ASSOCIATION</div>
-
-            <div class="mini">
-              <div class="row"><span class="dot"></span><div><b>เครือข่ายสมาชิก</b><small>เชื่อมโยงผู้ประกอบการ พันธมิตร และผู้เชี่ยวชาญในอุตสาหกรรมโลจิสติกส์</small></div></div>
-              <div class="row"><span class="dot"></span><div><b>พัฒนาความรู้และมาตรฐาน</b><small>จัดอบรม สัมมนา และกิจกรรมวิชาการเพื่อยกระดับศักยภาพสมาชิก</small></div></div>
-              <div class="row"><span class="dot"></span><div><b>พร้อมประสานความร่วมมือ</b><small>ติดต่อสมาคมเพื่อสมัครสมาชิก เสนอความร่วมมือ หรือสอบถามกิจกรรม</small></div></div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2>รู้จักเรา</h2>
-      <p class="sub">
-        สมาคมการค้าไทยโกลบอล โลจิสติกส์ ให้เครือข่ายสมาชิกโลจิสติกส์และการอบรมและพัฒนาศักยภาพสมาชิก
-        โดยมุ่งเน้น “ความถูกต้อง ตรวจสอบได้ และนำไปใช้จริง” เพื่อช่วยให้องค์กรบริหารความเสี่ยงและเพิ่มประสิทธิภาพงานได้อย่างยั่งยืน
-      </p>
-
-      <div class="grid3">
-        <div class="feature">
-          <span class="tag">Vision</span>
-          <h3>ขยายโอกาสทางธุรกิจการทำงาน “ถูกต้องและยั่งยืน”</h3>
-          <p>เชื่อมโยงผู้ประกอบการไทยกับพันธมิตรทั้งในและต่างประเทศ พร้อมผลักดันมาตรฐานและโอกาสทางธุรกิจร่วมกัน</p>
-        </div>
-        <div class="feature">
-          <span class="tag">Mission</span>
-          <h3>ส่งเสริมสมาชิกและพัฒนาอุตสาหกรรม</h3>
-          <p>จัดกิจกรรมอบรม สัมมนา แลกเปลี่ยนข้อมูล และประสานความร่วมมือเพื่อเพิ่มขีดความสามารถของสมาชิก</p>
-        </div>
-        <div class="feature">
-          <span class="tag">Core Value</span>
-          <h3>Collaboration • Knowledge • Trust</h3>
-          <p>ร่วมมือ แบ่งปันองค์ความรู้ และดำเนินงานด้วยความโปร่งใสและน่าเชื่อถือ</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <h2>บทบาทของสมาคม</h2>
-      <p class="sub">ขับเคลื่อนเครือข่ายสมาชิก พัฒนาความรู้ สร้างมาตรฐาน และเชื่อมโยงโอกาสทางธุรกิจ</p>
-
-      <div class="grid2">
-        <div class="feature"><span class="tag">Consulting</span><h3>เครือข่ายผู้ประกอบการโลจิสติกส์</h3><p>สร้างพื้นที่เชื่อมโยงสมาชิก ผู้ประกอบการ และพันธมิตร เพื่อแลกเปลี่ยนข้อมูลและโอกาสทางธุรกิจ</p></div>
-        <div class="feature"><span class="tag">Compliance</span><h3>พัฒนามาตรฐานวิชาชีพ</h3><p>ส่งเสริมแนวปฏิบัติที่ดี ความรู้ด้านกฎหมาย ศุลกากร และมาตรฐานที่เกี่ยวข้องกับธุรกิจโลจิสติกส์</p></div>
-        <div class="feature"><span class="tag">Training</span><h3>อบรมและพัฒนาศักยภาพสมาชิก</h3><p>จัดหลักสูตร สัมมนา และเวิร์กช็อปที่ตอบโจทย์การทำงานจริงของผู้ประกอบการและบุคลากรในอุตสาหกรรม</p></div>
-        <div class="feature"><span class="tag">Support</span><h3>ประสานความร่วมมือและข้อเสนอเชิงนโยบาย</h3><p>รวบรวมข้อเสนอจากสมาชิก ประสานหน่วยงานที่เกี่ยวข้อง และสนับสนุนการพัฒนาอุตสาหกรรมโลจิสติกส์ไทย</p></div>
-      </div>
-    </section>
-
-    <!-- TRAINING -->
-    <section id="training" class="section">
-      <h2>กิจกรรมอบรมและพัฒนาสมาชิก</h2>
-      <p class="sub">
-        สมาคมจัดอบรม สัมมนา และกิจกรรมแลกเปลี่ยนองค์ความรู้ด้านโลจิสติกส์ ศุลกากร การนำเข้า–ส่งออก และซัพพลายเชน
-        เหมาะสำหรับสมาชิก ผู้ประกอบการ บุคลากรในอุตสาหกรรม และผู้สนใจพัฒนาความรู้วิชาชีพ
-      </p>
-
-      <div class="cta-band">
-        <div>
-          <h3>สนใจสมัครสมาชิก / ร่วมกิจกรรมกับสมาคม</h3>
-          <p>ติดต่อเพื่อขอข้อมูลการสมัครสมาชิก กิจกรรมอบรม ความร่วมมือ และสิทธิประโยชน์ต่าง ๆ</p>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" href="tel:021161048">โทร 02-116-1048</a>
-          <a class="btn primary" href="#contact">ฝากข้อมูลให้ติดต่อกลับ</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCHEDULE -->
-    <section id="schedule" class="section">
-      <h2>ตารางฝึกอบรม</h2>
-      <p class="sub">
-        ด้านล่างมี 2 แบบ: (1) แสดงเป็น “รูปภาพ” และ (2) แสดงเป็น “ตาราง HTML”
-      </p>
-
-      <div class="grid2">
-        <div class="img-card" data-lightbox="assets/schedule.jpg">
-          <img src="assets/schedule.jpg" alt="ตารางฝึกอบรม (รูปภาพ)">
-        </div>
-
-        <div class="table-wrap">
-          <table aria-label="ตารางฝึกอบรม">
-            <thead>
-              <tr>
-                <th style="width:180px">วันที่</th>
-                <th>เวลา 08:00–12:00</th>
-                <th>เวลา 13:00–17:00</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>เสาร์ 30 พ.ค. 2569</td><td>จรรยาบรรณตัวแทนออกของ (ผศ.ดร.ทัณย์ สาริยากุล)</td><td>กฎหมายศุลกากร (อ.อนุชา นาคสิทธิ์)</td></tr>
-              <tr><td>อาทิตย์ 31 พ.ค. 2569</td><td>กฎหมายศุลกากร (ต่อ) (อ.อนุชา นาคสิทธิ์)</td><td>กฎหมายศุลกากร (ต่อ) (อ.อนุชา นาคสิทธิ์)</td></tr>
-              <tr><td>เสาร์ 6 มิ.ย. 2569</td><td>สิทธิประโยชน์ทางศุลกากร (อ.อนุชา นาคสิทธิ์)</td><td>สิทธิประโยชน์ทางศุลกากร (ต่อ) (อ.อนุชา นาคสิทธิ์)</td></tr>
-              <tr><td>อาทิตย์ 7 มิ.ย. 2569</td><td>สิทธิประโยชน์ทางศุลกากร (ต่อ) (อ.อนุชา นาคสิทธิ์)</td><td>กฎว่าด้วยถิ่นกำเนิดสินค้า FTA (อ.อนุชา นาคสิทธิ์)</td></tr>
-              <tr><td>เสาร์ 13 มิ.ย. 2569</td><td>พิกัดอัตราศุลกากร (อ.อนุชา นาคสิทธิ์)</td><td>พิกัดอัตราศุลกากร (ต่อ) (อ.อนุชา นาคสิทธิ์)</td></tr>
-              <tr><td>อาทิตย์ 14 มิ.ย. 2569</td><td>พิกัดอัตราศุลกากร (อ.อนุชา นาคสิทธิ์)</td><td>พิกัดอัตราศุลกากร (WORK SHOP) (อ.อนุชา นาคสิทธิ์)</td></tr>
-              <tr><td>เสาร์ 20 มิ.ย. 2569</td><td>ราคาศุลกากร (อ.อนุชา นาคสิทธิ์)</td><td>ราคาศุลกากร (อ.อนุชา นาคสิทธิ์)</td></tr>
-              <tr><td>อาทิตย์ 21 มิ.ย. 2569</td><td>พิธีการส่วนบุคคล/เอกสิทธิ์/ATA CARNET (อ.ฤทธิชัย แสนเพื่อน)</td><td>พิธีการเฉพาะเรื่อง ผ่านแดน/ถ่ายลำ (อ.ฤทธิชัย แสนเพื่อน)</td></tr>
-              <tr><td>เสาร์ 27 มิ.ย. 2569</td><td>พิธีการเฉพาะเรื่อง/การขนถ่ายข้างลำ/หลายเที่ยวเรือ (อ.ฤทธิชัย แสนเพื่อน)</td><td>พิธีการทางอากาศ/ทางไปรษณีย์ (อ.ฤทธิชัย แสนเพื่อน)</td></tr>
-              <tr><td>อาทิตย์ 28 มิ.ย. 2569</td><td>การสำแดงใบขนสินค้าเข้า-ขาออก (อ.สงค์ศักดิ์ สนทะมิโน)</td><td>การตรวจปล่อยสินค้าเข้า-ขาออก (อ.สงค์ศักดิ์ สนทะมิโน)</td></tr>
-              <tr><td>เสาร์ 4 ก.ค. 2569</td><td>พิธีการศุลกากรระบบอิเล็กทรอนิกส์/ปัจฉิม (อ.สงค์ศักดิ์ สนทะมิโน)</td><td>ตัวแทนออกของระดับมาตรฐาน AEO (อ.สงค์ศักดิ์ สนทะมิโน)</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- BROCHURE (เหลือรุ่น 5 เท่านั้น) -->
-    <section id="brochure" class="section">
-      <h2>โปรชัวร์รับสมัคร (รุ่นที่ 5)</h2>
-      <p class="sub">คลิกที่รูปเพื่อดูภาพขยาย</p>
-
-      <div class="gallery-grid">
-        <div class="gallery-card" data-lightbox="assets/brochure1.png">
-          <img src="assets/brochure1.png" alt="โปรชัวร์รับสมัคร รุ่นที่ 5">
-          <div class="gallery-info">
-            <b>โปรชัวร์รับสมัคร รุ่นที่ 5</b>
-            <small>หลักสูตรตัวแทนออกของมาตรฐานศุลกากร</small>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery" class="section">
-      <h2>ภาพบรรยากาศการอบรม</h2>
-      <p class="sub">คลิกที่รูปเพื่อดูภาพขยาย</p>
-
-      <div class="gallery-grid">
-        <div class="gallery-card" data-lightbox="assets/training1.jpg">
-          <img src="assets/training1.jpg" alt="บรรยากาศการอบรม 1">
-          <div class="gallery-info"><b>บรรยากาศการอบรม</b><small>training1.jpg</small></div>
-        </div>
-        <div class="gallery-card" data-lightbox="assets/training2.jpg">
-          <img src="assets/training2.jpg" alt="บรรยากาศการอบรม 2">
-          <div class="gallery-info"><b>ภาพกิจกรรมการอบรม</b><small>training2.jpg</small></div>
-        </div>
-        <div class="gallery-card" data-lightbox="assets/training3.jpg">
-          <img src="assets/training3.jpg" alt="บรรยากาศการอบรม 3">
-          <div class="gallery-info"><b>ภาพการอบรม</b><small>training3.jpg</small></div>
-        </div>
-        <div class="gallery-card" data-lightbox="assets/training4.jpg">
-          <img src="assets/training4.jpg" alt="บรรยากาศการอบรม 4">
-          <div class="gallery-info"><b>ภาพการอบรม</b><small>training4.jpg</small></div>
-        </div>
-        <div class="gallery-card" data-lightbox="assets/training5.jpg">
-          <img src="assets/training5.jpg" alt="บรรยากาศการอบรม 5">
-          <div class="gallery-info"><b>ภาพการอบรม</b><small>training5.jpg</small></div>
-        </div>
-        <div class="gallery-card" data-lightbox="assets/training6.jpg">
-          <img src="assets/training6.jpg" alt="บรรยากาศการอบรม 6">
-          <div class="gallery-info"><b>ภาพการอบรม</b><small>training6.jpg</small></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>ติดต่อเรา</h2>
-      <p class="sub">ฝากข้อมูลเพื่อให้ทีมงานติดต่อกลับ หรือโทรศัพท์โดยตรงได้ทันที</p>
-
-      <div class="contact-grid">
-        <div class="feature">
-          <span class="tag">Contact</span>
-          <h3>ช่องทางติดต่อ</h3>
-          <p style="margin-top:10px; line-height:1.9; color:var(--muted)">
-            <b style="color:var(--text)">โทร:</b> 02-116-1048<br/>
-            <b style="color:var(--text)">อีเมล:</b> TPS_CONSULTANT@HOTMAIL.COM<br/>
-            <b style="color:var(--text)">เวลาทำการ:</b> จันทร์–ศุกร์ 09:00–18:00 น.
-          </p>
-        </div>
-
-        <div class="feature">
-          <span class="tag">Message</span>
-          <h3>แบบฟอร์มติดต่อ (ตัวอย่าง)</h3>
-          <p class="small">กรุณากรอกข้อมูลให้ครบถ้วน เพื่อให้เจ้าหน้าที่สมาคมติดต่อกลับ</p>
-
-          <form onsubmit="event.preventDefault(); alert('รับข้อความเรียบร้อย ✅ (ตัวอย่าง)');">
-            <div style="display:grid; gap:10px; margin-top:10px;">
-              <input required placeholder="ชื่อ-นามสกุล" />
-              <input required placeholder="เบอร์โทรศัพท์" />
-              <input placeholder="อีเมล (ถ้ามี)" />
-              <textarea placeholder="รายละเอียดที่ต้องการติดต่อ (เช่น สมัครสมาชิก/เข้าร่วมกิจกรรม/เสนอความร่วมมือ/สอบถามหลักสูตร)"></textarea>
-              <button class="btn primary" type="submit">ส่งข้อความ</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-grid">
-        <div>
-          <b style="color:var(--text)">สมาคมการค้าไทยโกลบอล โลจิสติกส์</b><br/>
+<header class="topbar">
+  <div class="wrap">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">
+        <div class="brand-logo"><img src="assets/logo.png" alt="โลโก้สมาคม"></div>
+        <div class="brand-text">
+          <strong>สมาคมการค้าไทยโกลบอล โลจิสติกส์</strong>
           <span>THAI GLOBAL LOGISTICS TRADE ASSOCIATION</span>
-          <div class="small" style="margin-top:10px">
-            ให้คำปรึกษาโลจิสติกส์ • พัฒนาความรู้และมาตรฐาน • พัฒนาระบบงานเพื่อความถูกต้องและยั่งยืน
-          </div>
         </div>
-        <div>
-          <div class="footer-links">
-            <a href="#about">รู้จักเรา</a>
-            <a href="#services">บทบาทสมาคม</a>
-            <a href="#training">อบรม</a>
-            <a href="#schedule">ตาราง</a>
-            <a href="#brochure">โปรชัวร์</a>
-            <a href="#gallery">ภาพกิจกรรม</a>
-            <a href="#contact">ติดต่อ</a>
-          </div>
-          <div class="small" style="margin-top:10px">© <span id="year"></span> สมาคมการค้าไทยโกลบอล โลจิสติกส์</div>
-        </div>
+      </a>
+      <nav class="nav">
+        <a href="#about">รู้จักเรา</a><a href="#services">บทบาทสมาคม</a><a href="#training">กิจกรรมและอบรม</a>
+        <a href="#schedule">ตารางฝึกอบรม</a><a href="#brochure">โปรชัวร์</a><a href="#gallery">ภาพกิจกรรม</a><a href="#contact">ติดต่อเรา</a>
+      </nav>
+      <div class="actions">
+        <a class="btn" href="tel:021161048">โทร 02-116-1048</a>
+        <a class="btn primary" href="#contact">ขอรับคำปรึกษา</a>
+        <button class="hamburger" id="hamburger" type="button">เมนู</button>
       </div>
-    </footer>
-  </main>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-inner">
-      <button class="lightbox-close" id="lightboxClose" type="button">ปิด ✕</button>
-      <img id="lightboxImg" alt="รูปขยาย">
     </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="tel:021161048">☎ โทร 02-116-1048</a>
+      <a href="#about">รู้จักเรา</a><a href="#services">บทบาทสมาคม</a><a href="#training">กิจกรรมและอบรม</a>
+      <a href="#schedule">ตารางฝึกอบรม</a><a href="#brochure">โปรชัวร์</a><a href="#gallery">ภาพกิจกรรม</a><a href="#contact">ติดต่อเรา</a>
+    </nav>
   </div>
+</header>
 
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+<main id="top" class="wrap">
+<section class="hero">
+  <div class="hero-grid">
+    <div class="card card-pad">
+      <span class="badge">Networking • Knowledge • Standards</span>
+      <h1>ศูนย์กลางเครือข่ายโลจิสติกส์ไทย<br>เชื่อมโยงธุรกิจ “เติบโตอย่างยั่งยืน”</h1>
+      <p class="lead">สมาคมการค้าไทยโกลบอล โลจิสติกส์ เป็นศูนย์กลางความร่วมมือของผู้ประกอบการด้านโลจิสติกส์ การนำเข้า–ส่งออก และซัพพลายเชน มุ่งส่งเสริมเครือข่ายธุรกิจ พัฒนาความรู้ และขยายโอกาสทางธุรกิจอย่างยั่งยืน</p>
+      <div class="cta"><a class="btn primary" href="#training">ดูกิจกรรมและหลักสูตร</a><a class="btn" href="#services">ดูบทบาทของสมาคม</a><a class="btn" href="#schedule">ดูตารางฝึกอบรม</a></div>
+      <div class="stats">
+        <div class="stat"><b>เครือข่ายคุณภาพ</b><span>สมาชิก • พันธมิตร • ผู้เชี่ยวชาญ</span></div>
+        <div class="stat"><b>พัฒนาองค์ความรู้</b><span>อบรม • สัมมนา • แลกเปลี่ยนประสบการณ์</span></div>
+        <div class="stat"><b>ขยายโอกาสทางธุรกิจ</b><span>เชื่อมโยงการค้าในประเทศและต่างประเทศ</span></div>
+      </div>
+    </div>
+    <aside class="card hero-side"><div class="card-pad">
+      <div class="hero-visual">THAI GLOBAL LOGISTICS TRADE ASSOCIATION</div>
+      <div class="mini">
+        <div class="row"><span class="dot"></span><div><b>เครือข่ายสมาชิก</b><small>เชื่อมโยงผู้ประกอบการ พันธมิตร และผู้เชี่ยวชาญในอุตสาหกรรมโลจิสติกส์</small></div></div>
+        <div class="row"><span class="dot"></span><div><b>พัฒนาความรู้และมาตรฐาน</b><small>จัดอบรม สัมมนา และกิจกรรมวิชาการเพื่อยกระดับศักยภาพสมาชิก</small></div></div>
+        <div class="row"><span class="dot"></span><div><b>พร้อมประสานความร่วมมือ</b><small>ติดต่อสมาคมเพื่อสมัครสมาชิก เสนอความร่วมมือ หรือสอบถามกิจกรรม</small></div></div>
+      </div>
+    </div></aside>
+  </div>
+</section>
 
-    // Mobile menu
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    hamburger?.addEventListener('click', () => mobileNav.classList.toggle('open'));
-    mobileNav?.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => mobileNav.classList.remove('open'));
-    });
+<section id="about" class="section"><h2>รู้จักเรา</h2>
+<p class="sub">สมาคมการค้าไทยโกลบอล โลจิสติกส์ เป็นเครือข่ายสมาชิกด้านโลจิสติกส์ มุ่งพัฒนาศักยภาพสมาชิกด้วยความถูกต้อง ตรวจสอบได้ และนำไปใช้จริง</p>
+<div class="grid3">
+  <div class="feature"><span class="tag">Vision</span><h3>ขยายโอกาสทางธุรกิจ “ถูกต้องและยั่งยืน”</h3><p>เชื่อมโยงผู้ประกอบการไทยกับพันธมิตรทั้งในและต่างประเทศ พร้อมผลักดันมาตรฐานและโอกาสทางธุรกิจร่วมกัน</p></div>
+  <div class="feature"><span class="tag">Mission</span><h3>ส่งเสริมสมาชิกและพัฒนาอุตสาหกรรม</h3><p>จัดกิจกรรมอบรม สัมมนา แลกเปลี่ยนข้อมูล และประสานความร่วมมือเพื่อเพิ่มขีดความสามารถของสมาชิก</p></div>
+  <div class="feature"><span class="tag">Core Value</span><h3>Collaboration • Knowledge • Trust</h3><p>ร่วมมือ แบ่งปันองค์ความรู้ และดำเนินงานด้วยความโปร่งใสและน่าเชื่อถือ</p></div>
+</div></section>
 
-    // Lightbox
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightboxImg');
-    const lbClose = document.getElementById('lightboxClose');
+<section id="services" class="section"><h2>บทบาทของสมาคม</h2><p class="sub">ขับเคลื่อนเครือข่ายสมาชิก พัฒนาความรู้ สร้างมาตรฐาน และเชื่อมโยงโอกาสทางธุรกิจ</p>
+<div class="grid2">
+  <div class="feature"><span class="tag">Network</span><h3>เครือข่ายผู้ประกอบการโลจิสติกส์</h3><p>สร้างพื้นที่เชื่อมโยงสมาชิก ผู้ประกอบการ และพันธมิตร เพื่อแลกเปลี่ยนข้อมูลและโอกาสทางธุรกิจ</p></div>
+  <div class="feature"><span class="tag">Compliance</span><h3>พัฒนามาตรฐานวิชาชีพ</h3><p>ส่งเสริมความรู้ด้านกฎหมาย ศุลกากร และมาตรฐานที่เกี่ยวข้องกับธุรกิจโลจิสติกส์</p></div>
+  <div class="feature"><span class="tag">Training</span><h3>อบรมและพัฒนาศักยภาพสมาชิก</h3><p>จัดหลักสูตร สัมมนา และเวิร์กช็อปที่ตอบโจทย์การทำงานจริง</p></div>
+  <div class="feature"><span class="tag">Support</span><h3>ประสานความร่วมมือ</h3><p>รวบรวมข้อเสนอจากสมาชิก ประสานหน่วยงานที่เกี่ยวข้อง และสนับสนุนอุตสาหกรรมโลจิสติกส์ไทย</p></div>
+</div></section>
 
-    function openLightbox(src){
-      lbImg.src = src;
-      lb.classList.add('open');
-      lb.setAttribute('aria-hidden', 'false');
-    }
-    function closeLightbox(){
-      lb.classList.remove('open');
-      lb.setAttribute('aria-hidden', 'true');
-      lbImg.src = '';
-    }
+<section id="training" class="section"><h2>กิจกรรมอบรมและพัฒนาสมาชิก</h2>
+<p class="sub">สมาคมจัดอบรม สัมมนา และกิจกรรมแลกเปลี่ยนองค์ความรู้ด้านโลจิสติกส์ ศุลกากร การนำเข้า–ส่งออก และซัพพลายเชน</p>
+<div class="cta-band"><div><h3>สนใจสมัครสมาชิก / ร่วมกิจกรรมกับสมาคม</h3><p>ติดต่อเพื่อขอข้อมูลการสมัครสมาชิก กิจกรรมอบรม ความร่วมมือ และสิทธิประโยชน์ต่าง ๆ</p></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="tel:021161048">โทร 02-116-1048</a><a class="btn primary" href="#contact">ฝากข้อมูลให้ติดต่อกลับ</a></div></div>
+</section>
 
-    document.querySelectorAll('[data-lightbox]').forEach(el => {
-      el.addEventListener('click', () => openLightbox(el.getAttribute('data-lightbox')));
-    });
+<section id="schedule" class="section"><h2>ตารางฝึกอบรม</h2><p class="sub">เลื่อนตารางในแนวนอนได้เมื่อเปิดบนมือถือ</p>
+<div class="grid2">
+  <div class="img-card" data-lightbox="assets/schedule.jpg"><img src="assets/schedule.jpg" alt="ตารางฝึกอบรม"></div>
+  <div class="table-wrap"><table><thead><tr><th>วันที่</th><th>เวลา 08:00–12:00</th><th>เวลา 13:00–17:00</th></tr></thead>
+  <tbody>
+    <tr><td>เสาร์ 30 พ.ค. 2569</td><td>จรรยาบรรณตัวแทนออกของ</td><td>กฎหมายศุลกากร</td></tr>
+    <tr><td>อาทิตย์ 31 พ.ค. 2569</td><td>กฎหมายศุลกากร (ต่อ)</td><td>กฎหมายศุลกากร (ต่อ)</td></tr>
+    <tr><td>เสาร์ 6 มิ.ย. 2569</td><td>สิทธิประโยชน์ทางศุลกากร</td><td>สิทธิประโยชน์ทางศุลกากร (ต่อ)</td></tr>
+    <tr><td>อาทิตย์ 7 มิ.ย. 2569</td><td>สิทธิประโยชน์ทางศุลกากร (ต่อ)</td><td>กฎว่าด้วยถิ่นกำเนิดสินค้า FTA</td></tr>
+    <tr><td>เสาร์ 13 มิ.ย. 2569</td><td>พิกัดอัตราศุลกากร</td><td>พิกัดอัตราศุลกากร (ต่อ)</td></tr>
+    <tr><td>อาทิตย์ 14 มิ.ย. 2569</td><td>พิกัดอัตราศุลกากร</td><td>พิกัดอัตราศุลกากร (WORKSHOP)</td></tr>
+    <tr><td>เสาร์ 20 มิ.ย. 2569</td><td>ราคาศุลกากร</td><td>ราคาศุลกากร</td></tr>
+    <tr><td>อาทิตย์ 21 มิ.ย. 2569</td><td>พิธีการส่วนบุคคล/เอกสิทธิ์/ATA CARNET</td><td>พิธีการเฉพาะเรื่อง ผ่านแดน/ถ่ายลำ</td></tr>
+    <tr><td>เสาร์ 27 มิ.ย. 2569</td><td>พิธีการเฉพาะเรื่อง</td><td>พิธีการทางอากาศ/ทางไปรษณีย์</td></tr>
+    <tr><td>อาทิตย์ 28 มิ.ย. 2569</td><td>การสำแดงใบขนสินค้าเข้า-ขาออก</td><td>การตรวจปล่อยสินค้าเข้า-ขาออก</td></tr>
+    <tr><td>เสาร์ 4 ก.ค. 2569</td><td>พิธีการศุลกากรระบบอิเล็กทรอนิกส์</td><td>ตัวแทนออกของระดับมาตรฐาน AEO</td></tr>
+  </tbody></table></div>
+</div></section>
 
-    lbClose.addEventListener('click', closeLightbox);
-    lb.addEventListener('click', (e) => { if(e.target === lb) closeLightbox(); });
-    window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
-  </script>
+<section id="brochure" class="section"><h2>โปรชัวร์รับสมัคร (รุ่นที่ 5)</h2><p class="sub">แตะที่รูปเพื่อดูภาพขยาย</p>
+<div class="gallery-grid"><div class="gallery-card" data-lightbox="assets/brochure1.png"><img src="assets/brochure1.png" alt="โปรชัวร์รับสมัคร รุ่นที่ 5"><div class="gallery-info"><b>โปรชัวร์รับสมัคร รุ่นที่ 5</b><small>หลักสูตรตัวแทนออกของมาตรฐานศุลกากร</small></div></div></div>
+</section>
+
+<section id="gallery" class="section"><h2>ภาพบรรยากาศการอบรม</h2><p class="sub">แตะที่รูปเพื่อดูภาพขยาย</p>
+<div class="gallery-grid">
+  <div class="gallery-card" data-lightbox="assets/training1.jpg"><img src="assets/training1.jpg" alt="ภาพอบรม 1"><div class="gallery-info"><b>บรรยากาศการอบรม</b></div></div>
+  <div class="gallery-card" data-lightbox="assets/training2.jpg"><img src="assets/training2.jpg" alt="ภาพอบรม 2"><div class="gallery-info"><b>ภาพกิจกรรมการอบรม</b></div></div>
+  <div class="gallery-card" data-lightbox="assets/training3.jpg"><img src="assets/training3.jpg" alt="ภาพอบรม 3"><div class="gallery-info"><b>ภาพการอบรม</b></div></div>
+  <div class="gallery-card" data-lightbox="assets/training4.jpg"><img src="assets/training4.jpg" alt="ภาพอบรม 4"><div class="gallery-info"><b>ภาพการอบรม</b></div></div>
+  <div class="gallery-card" data-lightbox="assets/training5.jpg"><img src="assets/training5.jpg" alt="ภาพอบรม 5"><div class="gallery-info"><b>ภาพการอบรม</b></div></div>
+  <div class="gallery-card" data-lightbox="assets/training6.jpg"><img src="assets/training6.jpg" alt="ภาพอบรม 6"><div class="gallery-info"><b>ภาพการอบรม</b></div></div>
+</div></section>
+
+<section id="contact" class="section"><h2>ติดต่อเรา</h2><p class="sub">ฝากข้อมูลเพื่อให้ทีมงานติดต่อกลับ หรือโทรศัพท์โดยตรงได้ทันที</p>
+<div class="contact-grid">
+  <div class="feature"><span class="tag">Contact</span><h3>ช่องทางติดต่อ</h3><p><b>โทร:</b> 02-116-1048<br><b>อีเมล:</b> TPS_CONSULTANT@HOTMAIL.COM<br><b>เวลาทำการ:</b> จันทร์–ศุกร์ 09:00–18:00 น.</p></div>
+  <div class="feature"><span class="tag">Message</span><h3>แบบฟอร์มติดต่อ</h3><p class="small">กรุณากรอกข้อมูลให้ครบถ้วน เพื่อให้เจ้าหน้าที่สมาคมติดต่อกลับ</p>
+  <form onsubmit="event.preventDefault();alert('รับข้อความเรียบร้อย ✅ (ตัวอย่าง)')"><div style="display:grid;gap:10px;margin-top:10px">
+    <input required placeholder="ชื่อ-นามสกุล"><input required placeholder="เบอร์โทรศัพท์"><input placeholder="อีเมล (ถ้ามี)">
+    <textarea placeholder="รายละเอียดที่ต้องการติดต่อ"></textarea><button class="btn primary" type="submit">ส่งข้อความ</button>
+  </div></form></div>
+</div></section>
+
+<footer><div class="footer-grid"><div><b style="color:var(--text)">สมาคมการค้าไทยโกลบอล โลจิสติกส์</b><br>
+<span>THAI GLOBAL LOGISTICS TRADE ASSOCIATION</span><div class="small" style="margin-top:10px">พัฒนาความรู้ มาตรฐาน และเครือข่ายธุรกิจโลจิสติกส์อย่างยั่งยืน</div></div>
+<div><div class="footer-links"><a href="#about">รู้จักเรา</a><a href="#services">บทบาทสมาคม</a><a href="#training">กิจกรรม</a><a href="#contact">ติดต่อ</a></div>
+<div class="small" style="margin-top:10px">© <span id="year"></span> Thai Global Logistics Trade Association</div></div></div></footer>
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true"><div class="lightbox-inner">
+<button class="lightbox-close" id="lightboxClose" type="button">ปิด ✕</button><img id="lightboxImg" alt="รูปขยาย"></div></div>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const hamburger=document.getElementById('hamburger'),mobileNav=document.getElementById('mobileNav');
+hamburger.addEventListener('click',()=>mobileNav.classList.toggle('open'));
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileNav.classList.remove('open')));
+const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lightboxImg'),lbClose=document.getElementById('lightboxClose');
+document.querySelectorAll('[data-lightbox]').forEach(el=>el.addEventListener('click',()=>{lbImg.src=el.getAttribute('data-lightbox');lb.classList.add('open')}));
+lbClose.addEventListener('click',()=>lb.classList.remove('open'));
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')});
+</script>
 </body>
 </html>
